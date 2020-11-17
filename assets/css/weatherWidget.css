@@ -1,0 +1,27 @@
+/* Id 'smhi-widget' – Padding */
+#smhi-widget {
+    padding: 1rem 0rem 2rem;
+}
+
+/* Class 'divider' – Padding */
+.divider {
+    padding: 1rem 0rem;
+}
+
+/* Class 'wrapper-forecast' th – Padding */
+.wrapper-forecast th {
+    padding: 0.6rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Class 'wrapper-forecast' td – Padding, Text-align */
+.wrapper-forecast td {
+    padding: 0.6rem 1.5rem;
+    text-align: left;
+}
+
+/* Class 'wrapper-forecast' table – Border-bottom */
+.wrapper-forecast table, th, td {
+    border-bottom: 1px solid #333333;
+}

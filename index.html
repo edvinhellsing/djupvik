@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<title>Djupvik</title><!-- Title from Design specification Djupvik -->
+		<meta charset="utf-8" /><!-- UTF-8 -->
+		<link rel="stylesheet" href="assets/css/reset.css" /><!-- CSS Reset i egen fil (reset.css) i css-mappen -->
+		<link rel="stylesheet" href="assets/css/style.css" /><!-- Import styling – index.css -->
+		<link rel="stylesheet" href="assets/css/weatherWidget.css" /><!-- Import styling for Weather Widget – weatherWdiget.css – js solution 1/3 -->
+		<link rel="shortcut icon" href="assets/img/logo/Djukviks_Hamn_logo_180px.png" type="image/png" /><!-- Import shortcut icon -->
+		<script src="/assets/js/index.js" type="module"></script><!-- Script tag for index.js – js solution 2/3 -->
+	</head>
+	<body><!-- Start of Body -->
+		<div class="container"><!-- Start of Container -->
+			<header class="header"><!-- Start of Header -->
+				<div id="skippameny"><a href="#main">Skippa menyn</a></div><!-- Skip menu -->
+				<nav class="navbar"><!-- Start of Navigation -->
+					<a href="/index.html" class="djupvik-logo"><img src="/assets/img/logo/Djukviks_Hamn_logo_White_500px.png" alt="Djupviks Hamn Logotyp" width="180"></a>
+					<input class="menu-btn" type="checkbox" id="menu-btn" />
+  					<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+					<ul class="menu">
+						<li class="active"><a href="/index.html">Start</a></li>
+						<li><a href="/assets/html/turistmal.html">Turistmål</a></li>
+						<li><a href="/assets/html/gastplats.html">Gästplats</a></li>
+						<li><a href="/assets/html/historia.html">Historia</a></li>
+						<li><a href="/assets/html/medlemsinfo.html">Medlemsinfo</a></li>
+						<li><a href="/assets/html/kontakt.html">Kontakt</a></li>
+						<li><a href="/assets/html/english.html">English</a></li>
+					</ul>
+				</nav><!-- End of Navigation -->
+			</header><!-- End of Header -->
+			<main id="main" class="main"><!-- Start of Main -->
+				<div class="cover-photo-header"><!-- Cover photo header -->
+					<div class="cover-photo-header-desktop"><!-- Cover photo header desktop -->
+						<img src="/assets/img/Vik_strand_bat_bodar_Djupviks_Hamn.jpg" alt='Stugor, strand och båt liggandes i vackra Djupviks Hamn på Gotland' />
+					</div>
+					<div class="cover-photo-header-mobil"><!-- Cover photo header mobil -->
+						<img src="/assets/img/Vik_strand_bat_bodar_Djupviks_Hamn_800px.jpg" alt='Stugor, strand och båt liggandes i vackra Djupviks Hamn på Gotland' />
+					</div>
+				</div>
+				<section id="info"><!-- Info section – Heading and text 'Övergripande information' from document 'Startsidan' -->
+					<div class="text-info">
+						<h2 class="left-heading">ÖVERGRIPANDE INFORMATION</h2>
+						<p>
+							Djupviks hamn ligger på Gotlands västkust nästan rakt öster om Lilla Karlsö. Hamnen är otroligt vackert belägen i anslutning till ett gammalt Gotländskt fiskeläge bestående av fiskebodar från sent 1800-tal. Husen är grupperade i tre rader, mellan dem ligger gistgarden där man torkar nät och närmast stranden ligger båthusen. Från fiskeläget har man fri utsikt mot de båda Karlsöarna.<br />
+							Ansvaret för hamnen och fiskeläget har Djupviks hamnförening, som är en ideell förening som aktivt verkar för att bibehålla och utveckla Djupvik som fiskehamn och som fritidsbåtshamn för de många närboende och sommarboende.<br />
+							Föreningen driver en glasskiosk och kaffeservering på sommartid i ett gammalt båthus vid hamnen. Ett par hundra meter ovanför hamnen ligger Djupviks Hotell, ett hotell med restaurang och bra standard.<br />
+							Det finns även toaletter i hamnen varav en som är tillgänglighetsanpassad för rullstolar och rollatorer.<br />
+						</p>
+						<div class="left-btn">
+							<a class="button" href="/assets/html/kontakt.html">Kontakt</a>
+						</div>
+					</div>
+					<img class="image-info" src="/assets/img/Stugor_Djupviks_Hamn.jpg" alt='Stugor i trä i Djupviks Hamn, Gotland'/><!-- Image 50 percent width of info section -->
+				</section>
+				<section id="weather"><!-- Weather section full width -->
+					<!-- Info text 50 percent width of info section -->
+					<div class="weather-text">
+						<h2 class="centered-heading">VÄDERPROGNOS</h2>
+						<p>
+							Hos oss finner du alltid det aktuella vädret för Djupviks hamn. Utöver det finner du dagens och morgondagens väder kl 6, 12 och 18, för innevarande dag visas den/de tider av dessa som ännu inte passerat.
+						</p>
+						<p>
+							Väderprognoserna kan vara till nytta för såväl medlemmar som gäster. Väderdata vi presenterar är baserade på SMHI:s prognoser, men bäst är förstås att åka ned till hamnen för att själv se vilket väder det är där. Frågar du oss passar så gott som alla väder för att befinna sig i Djupviks Hamn.
+						</p>
+						<p>
+							Den första kolumnen från vänster (Kl) anger klockslag, den andra (Temp) anger temperatur i grader celsius, den tredje (VR) vindriktning, den fjärde (VS) vindstyrka och den sista (Himmel) om det är till exempel soligt eller nederbörd.
+						</p>
+						<div id='smhi-widget'></div><!-- Display of Weather Widget – js solution 3/3 -->
+						<div class="centered-btn">
+							<a class="button" href="/assets/html/turistmal.html">Turistmål</a>
+						</div>
+					</div>
+				</section>
+				<div class="cover-photo-news"><!-- Cover photo news -->
+					<div class="cover-photo-news-desktop"><!-- Cover photo news desktop -->
+						<img src="/assets/img/Fiskare_pir_Djupviks_Hamn.jpg" alt='Man fiskar från pir i Djupviks Hamn, Gotland' />
+					</div>
+					<div class="cover-photo-news-mobil"><!-- Cover photo news mobil -->
+						<img src="/assets/img/Fiskare_pir_Djupviks_Hamn_800px.jpg" alt='Man fiskar från pir i Djupviks Hamn, Gotland' />
+					</div>
+				</div>
+				<section id="heading-news"><!-- Heading news -->
+					<h2 class="centered-heading">SENASTE NYTT DJUPVIKS HAMN</h2>
+				</section>
+				<!-- News section – Header and text 'Senaste nytt' from document 'Startsidan' -->	
+				<section id="news">
+					<img class="image-news" src="assets/img/extra/Djupvik_Hamnjobb_2019.jpg" alt='Hamnjobb i Djupviks Hamn 2019'>
+					<article class="content-news">
+						<h3>Hamnjobb</h3>
+						<h4 class="date">2019-04-06</h4>
+						<p>
+							Lördagen den 6 april samlades ett antal av föreningens medlemmar för arbete i hamnen. Kiosken, kajerna och stranden städades. Kajer lagades och gräs brändes. Diverse fix på många håll. Vädret var bra och korven god. Det som återstår inför säsongen är att ta bort släke från stranden, att sätta upp ramp vid kiosken och att fylla kiosken med varor.<br />
+						</p>
+					</article>
+					<img class="image-news" src="assets/img/extra/Djupvik_Hamnens_dag_2018.jpg" alt='Hamnens dag i Djupviks Hamn 2018, foto: Björn Hjernquist'>
+					<article class="content-news">
+						<h3>Succé för hamnens dag!</h3>
+						<h4 class="date">2018-07-16</h4>
+						<p>
+							Lördagen den 16 juli arrangerade föreningen Djupviks hamn i Eksta ”Hamnens dag” i Djupvik. Vårt arbete har med åren alltmer också inriktats på att alla besökare, även de som kommer landvägen skall trivas i det vackra hamnområdet. Nu bjöds det in till ”Hamnens dag”. På plats fanns sjöfartsverkets SAR-helikopter, Sjöräddningens båt Hwitstjärna, släckningsbil från räddningstjänsten i Klintehamn, russ från Gannarve och ett antal loppisförsäljare. Aktiviteten lockade ett stort antal besökare.<br />
+							Uppskattningsvis 1000 besökare sökte sig under dagen till Djupvik. Intresset var stort för de besökande organisationerna som informerade och alla fick möjlighet att titta och ställa frågor. Barnen fick rida, de bjöds på bulle och dricka och många prövade lyckan i fiskdammen. Det fanns möjlighet att handla kaffe, korv, dricka och glass. Många dröjde sig kvar i hamnområdet och trivdes i det inledningsvis lite blåsiga men vackra vädret. Foto: Björn Hjernquist<br />
+						</p>
+					</article>
+				</section>
+			</main><!-- End of Main -->
+			<footer><!-- Start of Footer -->
+				<a href="/index.html"><img class="djupvik-symbol" src="/assets/img/logo/Djupviks_Hamn_symbol_white_200px.png" alt="Djupviks Hamn Symbol" width="180" height="180"></a>
+				<div class="hitta-hit">
+					<p>
+						<a href="https://goo.gl/maps/vC3KGZ4cPNYH8K3q8" target="_blank">Hitta hit</a>
+					</p>
+				</div>
+				<p>
+					Alla rättigheter tillhör <a href="#">Djupvikshamn.se</a>.<br>
+					Kontakta oss på <a href="mailto:info@djupvikshamn.se">info [at] djupvikshamn.se</a>.<br>
+					&copy; Djupviks Hamn
+					<script>
+						document.write(new Date().getFullYear());
+					</script>.
+				<p>
+			</footer><!-- End of Footer -->
+		</div><!-- End of container -->
+	</body><!-- End of Body -->
+</html>

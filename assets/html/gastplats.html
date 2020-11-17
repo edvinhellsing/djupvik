@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<title>Djupvik</title><!-- Title from Design specification Djupvik -->
+		<meta charset="utf-8" /><!-- UTF-8 -->
+		<link rel="stylesheet" href="../css/reset.css" /><!-- CSS Reset i egen fil (reset.css) i css-mappen -->
+		<link rel="stylesheet" href="../css/style.css" /><!-- Import styling – index.css -->
+		<link rel="stylesheet" href="../css/weatherWidget.css" /><!-- Import styling for Weather Widget – weatherWdiget.css – js solution 1/3 -->
+		<link rel="shortcut icon" href="../img/logo/Djukviks_Hamn_logo_180px.png" type="image/png" /><!-- Import shortcut icon -->
+		<script src="../js/index.js" type="module"></script><!-- Script tag for index.js – js solution 2/3 -->
+	</head>
+	<body><!-- Start of Body -->
+		<div class="container-gastplats"><!-- Start of Container -->
+			<header class="header"><!-- Start of Header -->
+				<div id="skippameny"><a href="#main-gastplats">Skippa menyn</a></div><!-- Skip menu -->
+				<nav class="navbar"><!-- Start of Navigation -->
+					<a href="/index.html" class="djupvik-logo"><img src="/assets/img/logo/Djukviks_Hamn_logo_White_500px.png" alt="Djupviks Hamn Logotyp" width="180"></a>
+					<input class="menu-btn" type="checkbox" id="menu-btn" />
+  					<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+					<ul class="menu">
+						<li><a href="../../index.html">Start</a></li>
+						<li><a href="/assets/html/turistmal.html">Turistmål</a></li>
+						<li class="active"><a href="/assets/html/gastplats.html">Gästplats</a></li>
+						<li><a href="/assets/html/historia.html">Historia</a></li>
+						<li><a href="/assets/html/medlemsinfo.html">Medlemsinfo</a></li>
+						<li><a href="/assets/html/kontakt.html">Kontakt</a></li>
+						<li><a href="/assets/html/english.html">English</a></li>
+					</ul>
+				</nav><!-- End of Navigation -->
+			</header><!-- End of Header -->
+			<main id="main-gastplats" class="main-gastplats"><!-- Start of Main -->
+				<div class="cover-photo-header-gastplats"><!-- Cover photo header gastplats -->
+					<div class="cover-photo-header-gastplats-desktop"><!-- Cover photo header gastplats desktop -->
+						<img src="../img/Sjomarke_Djupviks_Hamn.jpg" alt='Blått hav i Djupviks Hamn med sjömärke i förgrunden' />
+					</div>
+					<div class="cover-photo-header-gastplats-mobil"><!-- Cover photo header gastplats mobil -->
+						<img src="../img/Sjomarke_Djupviks_Hamn_800px.jpg" alt='Blått hav i Djupviks Hamn med sjömärke i förgrunden' />
+					</div>
+				</div>
+				<section id="heading-gastplats"><!-- Heading gastplats -->
+					<h2 class="centered-heading">GÄSTHAMNEN</h2>
+				</section>
+				<section id="info-gastplats"><!-- Subheading and text 'Gästhamnen' from document 'Gästplats' -->
+					<div class="info-text-gastplats">
+						<h3>GÄSTBÅTAR</h3>
+						<p>
+							Gästbåtar är hjärtligt välkomna!<br />
+							Vid normalvattendjup är djupet 3 meter i huvuddelen av hamnen. Vatten och el finns utdraget på kajerna. I land kan vi erbjuda ett modernt servicehus med WC, dusch och tvättmaskin.<br />
+						</p>
+						<p>
+							Ring gärna hamnfogden för att få reda på aktuellt läge.<br />
+							Hamnfogde Bo Lautin Mobil 0707 - 92 03 10.
+						</p>
+						<h3>PRISER</h3>
+							<table class="price-information">
+								<tr>
+									<th id="DayRent">Dygnshyra</th>
+									<th id="ElectricalConnection">El-anslutning</th>
+								</tr>
+								<tr>
+									<td headers="DayRent">150:- /dygn*</td>
+									<td headers="ElectricalConnection">50:- /dygn</td>
+								</tr>
+							</table>
+						<p>
+							*inkluderat kort för tillträde till servicehuset och 20:- för två duschar.
+						</p>
+						<h3>TURISTMÅL</h3>
+						<p>
+							Vi rekommenderar även att läsa om de olika <a href="/assets/html/gastplats.html" target="_blank">turistmål</a> som finns i närheten av Djupviks Hamn.
+						</p>
+					</div>
+				</section>
+				<div class="cover-photo-middle-gastplats"><!-- Cover photo middle gastplats -->
+					<div class="cover-photo-middle-gastplats-desktop"><!-- Cover photo middle gastplats desktop -->
+						<img src="../img/Sjobodar_Djupviks_Hamn.jpg" alt='Sjöbodar i trä i Djupviks Hamn, Gotland' />
+					</div>
+					<div class="cover-photo-middle-gastplats-mobil"><!-- Cover photo middle gastplats mobil -->
+						<img src="../img/Sjobodar_Djupviks_Hamn_800px.jpg" alt='Sjöbodar i trä i Djupviks Hamn, Gotland' />
+					</div>
+				</div>
+				<section id="weather"><!-- Weather section full width -->
+					<!-- Info text 50 percent width of info section -->
+					<div class="weather-text">
+						<h2 class="centered-heading">VÄDERPROGNOS</h2>
+						<p>
+							Hos oss finner du alltid det aktuella vädret för Djupviks hamn. Utöver det finner du dagens och morgondagens väder kl 6, 12 och 18, för innevarande dag visas den/de tider av dessa som ännu inte passerat.
+						</p>
+						<p>
+							Väderprognoserna kan vara till nytta för såväl medlemmar som gäster. Väderdata vi presenterar är baserade på SMHI:s prognoser, men bäst är förstås att åka ned till hamnen för att själv se vilket väder det är där. Frågar du oss passar så gott som alla väder för att befinna sig i Djupviks Hamn.
+						</p>
+						<p>
+							Den första kolumnen från vänster (Kl) anger klockslag, den andra (Temp) anger temperatur i grader celsius, den tredje (VR) vindriktning, den fjärde (VS) vindstyrka och den sista (Himmel) om det är till exempel soligt eller nederbörd.
+						</p>
+						<div id='smhi-widget'></div><!-- Display of Weather Widget – js solution 3/3 -->
+					</div>
+				</section>
+			</main><!-- End of Main -->
+			<footer><!-- Start of Footer -->
+				<a href="/index.html"><img class="djupvik-symbol" src="../img/logo/Djupviks_Hamn_symbol_white_200px.png" alt="Djupviks Hamn Symbol" width="180" height="180"></a>
+				<div class="hitta-hit">
+					<p>
+						<a href="https://goo.gl/maps/vC3KGZ4cPNYH8K3q8" target="_blank">Hitta hit</a>
+					</p>
+				</div>
+				<p>
+					Alla rättigheter tillhör <a href="#">Djupvikshamn.se</a>.<br>
+					Kontakta oss på <a href="mailto:info@djupvikshamn.se">info [at] djupvikshamn.se</a>.<br>
+					&copy; Djupviks Hamn
+					<script>
+						document.write(new Date().getFullYear());
+					</script>.
+				<p>
+			</footer><!-- End of Footer -->
+		</div><!-- End of Container -->	
+	</body><!-- End of Body -->
+</html>

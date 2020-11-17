@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<title>Djupvik</title><!-- Title from Design specification Djupvik -->
+		<meta charset="utf-8" /><!-- UTF-8 -->
+		<link rel="stylesheet" href="../css/reset.css" /><!-- CSS Reset i egen fil (reset.css) i css-mappen -->
+		<link rel="stylesheet" href="../css/style.css" /><!-- Import styling – index.css -->
+		<link rel="shortcut icon" href="../img/logo/Djukviks_Hamn_logo_180px.png" type="image/png" /><!-- Import shortcut icon -->
+	</head>
+	<body><!-- Start of Body -->
+		<div class="container-contact"><!-- Start of Container -->
+			<header class="header"><!-- Start of Header -->
+				<div id="skippameny"><a href="#main-contact">Skippa menyn</a></div><!-- Skip menu -->
+				<nav class="navbar"><!-- Start of Navigation -->
+					<a href="/index.html" class="djupvik-logo"><img src="/assets/img/logo/Djukviks_Hamn_logo_White_500px.png" alt="Djupviks Hamn Logotyp" width="180"></a>
+					<input class="menu-btn" type="checkbox" id="menu-btn" />
+  					<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+					<ul class="menu">
+						<li><a href="../../index.html">Start</a></li>
+						<li><a href="/assets/html/turistmal.html">Turistmål</a></li>
+						<li><a href="/assets/html/gastplats.html">Gästplats</a></li>
+						<li><a href="/assets/html/historia.html">Historia</a></li>
+						<li><a href="/assets/html/medlemsinfo.html">Medlemsinfo</a></li>
+						<li class="active"><a href="/assets/html/kontakt.html">Kontakt</a></li>
+						<li><a href="/assets/html/english.html">English</a></li>
+					</ul>
+				</nav><!-- End of Navigation -->
+			</header><!-- End of Header -->
+			<main id="main-contact" class="main-contact"><!-- Start of Main -->
+				<div class="cover-photo-header-contact"><!-- Cover photo header contact -->
+					<div class="cover-photo-header-contact-desktop"><!-- Cover photo header contact desktop -->
+						<img src="../img/Hav_gardesgard_Djupviks_Hamn.jpg" alt='Utsikt över havet över gärdesgården i Djupviks Hamn, Gotland' />
+					</div>
+					<div class="cover-photo-header-contact-mobil"><!-- Cover photo header contact mobil -->
+						<img src="../img/Hav_gardesgard_Djupviks_Hamn_800px.jpg" alt='Utsikt över havet över gärdesgården i Djupviks Hamn, Gotland' />
+					</div>
+				</div>
+				<section id="heading-contact"><!-- Heading contact -->
+					<h2 class="centered-heading">KONTAKT</h2>
+				</section>
+				<section id="info-contact"><!-- Contact info based on document 'Kontaktuppgifter' -->
+					<div class="info-form-contact"><!-- Contact form based on 'Kontaktformulär' from document 'Kontaktuppgifter' -->
+						<h3 class="info-contact-heading">KONTAKTFORMULÄR</h3>
+						<form method="POST" action="#">
+							<fieldset>
+							<legend>Ärende</legend>
+								<p>
+									<label for="ArendeRubrik">Ärenderubrik*:</label>
+									<input type="text" id="ArendeRubrik" name="arenderubrik" maxlength="40" required placeholder="Ärenderubrik"/>
+								</p>
+								<label for="ArendeBeskrivning">Ärendebeskrivning:</label><br />
+								<textarea name="arendebeskrivning" rows="5" cols="36" id="ArendeBeskrivning" placeholder="Beskriv ärendet"></textarea>
+								<p>Ärendet gäller:</p>
+								<p>
+									<input type="radio" name="arende" value="batplats" id="Batplats" />
+									<label for="Batplats">Båtplats</label>
+								</p>
+								<p>
+									<input type="radio" name="arende" value="medlem" id="Medlem" />
+									<label for="Medlem">Medlem</label>
+								</p>
+								<p>
+									<input type="radio" name="arende" value="ovrigt" id="Ovrigt" />
+									<label for="Ovrigt">Övrigt</label>
+								</p>
+							</fieldset>
+							<fieldset>
+							<legend>Kontaktuppgifter</legend>
+								<p>
+									<label for="Name">Namn*:</label>
+									<input type="text" id="Name" name="name" maxlength="30" required placeholder="Ditt namn"/>
+								</p>
+								<p>
+									<label for="Email">Email*:</label>
+									<input type="email" id="Email" name="email" maxlength="30" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="namn@mailadress.se"/>
+								</p>
+								<p>
+									<label for="MobilNummer">Mobilnummer:</label>
+									<input type="tel" id="MobilNummer" name="tel" maxlength="14" placeholder="Ditt mobilnummer"/>
+								</p>
+							</fieldset>
+							<fieldset>
+							<legend>Jag vill bli kontaktad via:</legend>
+								<p>
+									<select name="antalpersoner">
+										<option value="1" selected>Mail</option>
+										<option value="2">Telefon</option>
+										<option value="3">Vill inte bli kontaktad</option>
+									</select>
+								</p>
+							</fieldset>
+							<p><!-- GDPR – Consent to handle personal data -->
+								Jag samtycker till Djupviks Hamns <a href="#">Integritetspolicy</a> för behandling av personuppgifter vid användning av kontaktformulär.
+							</p>
+							<p>
+								<input type="radio" name="privay-policy" value="ja" id="Ja" checked/>
+								<label for="Ja">Ja</label>
+								<input type="radio" name="privay-policy" value="nej" id="Nej" />
+								<label for="Nej">Nej</label>
+							</p>
+							<p>
+								<input type="submit" value="Skicka" />
+								<input type="reset" value="Rensa formuläret" />
+							</p>
+						</form>
+					</div>
+					<div class="info-text-contact"><!-- Heading and text 'Kontaktuppgifter' from document 'Kontaktuppgifter' -->	
+						<h3 class="info-contact-heading">KONTAKTUPPGIFTER</h3>
+						<p>
+							Du är alltid välkommen att kontakta Djupviks Hamn. Vi försöker vara så tillgängliga som möjligt, men ibland dröjer det lite innan vi svarar. Du kommer enklast i kontakt med oss via kontaktformuläret, alternativt på <a href="mailto:info@djupvikshamn.se" >info [at] djupvikshamn.se</a>.
+						</p>
+						<p>
+							Söker du snabba svar vill vi rekommendera dig att först kika igenom vår <a href="#" target="_blank">FAQ</a>, där finner du svaren på de vanligaste frågorna. Det kan vara frågor om öppettider, avgifter, vilka data vi samlar in eller vår hantering av personuppgifter.
+						</p>
+						<p>
+							Du finner kontaktuppgifter till Hamnfogde samt vår postadress nedan. 
+						</p>
+						<p>
+							Hamnfogde Bo Lautin, mobil 0707-920310
+						</p>
+						<p>
+							Djupviks hamnförening<br />
+							c/o Ekholm<br />
+							Eksta Hägur 170<br />
+							623 54 Klintehamn
+						</p>
+						<div class="image-info-contact"><!-- Photo contact -->
+							<div class="image-info-contact-desktop"><!-- Photo contact desktop -->
+								<img src="../img/Stugor_tra_hav_Djupviks_Hamn.jpg" alt='Stugor med havet i bakgrunden, välkommen att kontakta Djupviks Hamn' />
+							</div>
+							<div class="image-info-contact-mobil"><!-- Photo contact mobil -->
+								<img src="../img/Stugor_tra_hav_Djupviks_Hamn_280px.jpg" alt='Stugor med havet i bakgrunden, välkommen att kontakta Djupviks Hamn' />
+							</div>
+						</div>
+					</div>
+				</section>			
+			</main><!-- End of Main -->
+			<footer><!-- Start of Footer -->
+				<a href="/index.html"><img class="djupvik-symbol" src="../img/logo/Djupviks_Hamn_symbol_white_200px.png" alt="Djupviks Hamn Symbol" width="180" height="180"></a>
+				<div class="hitta-hit">
+					<p>
+						<a href="https://goo.gl/maps/vC3KGZ4cPNYH8K3q8" target="_blank">Hitta hit</a>
+					</p>
+				</div>
+				<p>
+					Alla rättigheter tillhör <a href="#">Djupvikshamn.se</a>.<br>
+					Kontakta oss på <a href="mailto:info@djupvikshamn.se">info [at] djupvikshamn.se</a>.<br>
+					&copy; Djupviks Hamn
+					<script>
+						document.write(new Date().getFullYear());
+					</script>.
+				<p>
+			</footer><!-- End of Footer -->
+		</div><!-- End of Container -->
+	</body><!-- End of Body -->
+</html>

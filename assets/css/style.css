@@ -1,0 +1,1999 @@
+/* CSS Reset (Eric Meyer), placed in another css file (reset.css) in the css folder and linked in head in index.html */
+
+/* Import of Open Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Font-size */
+html {
+  font-size: 100%;
+}
+
+/* p tag – Margin bottom after closed p tag */
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* A tag – Text-decoration */
+a {
+  text-decoration: none;
+}
+
+/* h1 header – Font-size, Color, Background-color, Margin */
+header h1 {
+  font-size: 2.2rem;
+  color: #FFFFFF;
+  background-color: #233656;
+  margin: 1rem 0rem 0.5rem;
+}
+
+/* h2 – Font-size, Font-weight, Padding */
+h2 {
+  font-size: 160%;
+  font-weight: 700;
+  padding-bottom: 1.5rem;
+}
+
+/* h3 – Font-size, Font-weight, Padding */
+h3 {
+  font-size: 120%;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+/* h4 – Font-size, Font-weight, Padding */
+h4 {
+  font-size: 105%;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+/* Body. Olika kombinationer av font-family där Open Sans prioriteras först, lagt till line-heigt för ökad läsbarhet. Mörkgrå text. Centrera siten. */
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  line-height: 1.5rem;
+  color: #1B140D;
+  background-color: #BAADA4;
+  margin: auto;
+}
+
+/* Min- and max-width, Margin (body color added to the margin after 1680px) */
+.container, .container-turistmal, .container-gastplats, .container-historia, .container-medlemsinfo, .container-contact, .container-english {
+  min-width: 320px;
+  max-width: 1680px;
+  margin: auto;
+}
+
+/* Class 'centered heading' Text-align, Padding */
+.centered-heading {
+  text-align: center;
+  padding: 2rem 0rem;
+}
+
+/* Class 'left-heading' – Text-align, Padding */
+.left-heading {
+  text-align: left;
+  padding: 1rem 0rem;
+}
+
+/* Class 'centered-btn' – Text-align, Padding */
+.centered-btn {
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
+/* Class 'left-btn' – Padding */
+.left-btn {
+  padding: 1rem 0rem;
+}
+
+/* Class 'button' – Color, Background-color, Border, Border radius, Font-size, Font-weight, Text-transform, Padding and Margin */
+a.button {
+  color: #1B140D;
+  background-color: #C8996F;
+  border: none;
+  border-radius: 5px;
+  font-size: 110%;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  margin-top: 0.8rem;
+}
+
+/* Class 'button' Hover – Color, Background-color */
+a.button:hover, a.button:focus {
+  color: #C8996F;
+  background-color: #1B140D;
+  outline-color: #C8996F;
+}
+
+/* ------ Start Header – Navigation ------ */
+
+.header {
+  grid-area: header;
+  color: #FFFFFF;
+  padding-top: 0.5rem;
+  margin: auto;
+  position: fixed;
+  width: 100%;
+  max-width: 1680px;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #2F4859;
+}
+
+.header li a {
+  display: block;
+  padding: 0.5rem 0.7rem;
+  text-decoration: none;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  
+}
+
+li.active a {
+  color:#BAADA4;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 2.3rem 1.5rem 1rem;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #FFFFFF;
+  display: block;
+  height: 0.2rem;
+  position: relative;
+  transition: background 0.1s ease-out;
+  width: 1.5rem;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #FFFFFF;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.1s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* To make it possible to have a hamburger on smaller devices */
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+  padding-bottom: 1rem;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* List items in header, menu and icon */
+@media (min-width: 1024px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 0.9rem 0.5rem;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/* Class 'navbar' – Overflow hidden, Background-color, Position fixed, Top, Width, Padding, Grid name, Gloat, Text-align, Font-family */
+.navbar {
+  background-color: #2F4859;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  grid-area: nav;
+  font-family: 'Open Sans';
+  letter-spacing: 0.1rem;
+  max-width: 1680px;
+}
+
+/* Class 'navbar' a (Links navbar) – Float, Display block, Color, Text-align, Padding, Text-decoration, Letter-spacing */
+.navbar a {
+  float: left;
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1rem 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+/* Class 'navbar' hover – Color */
+.navbar a:hover {
+  color: #D8DDDD;
+}
+
+/* Id 'skippameny' link Digital units 1024px+ – Position, Top, Left, Color, Background, Font-weight, Border-radius, Padding, Webkit-transition, Transition, z-index */
+@media (min-width: 1024px) {
+  #skippameny a {
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    color: #1B140D;
+    background: #C8996F;
+    font-weight: 600;
+    border-bottom-right-radius: 5px;
+    padding: 0.5rem;
+    -webkit-transition: top 0.5s ease-out;
+    transition: top 0.5s ease-out;
+    z-index: 1;
+  }
+}
+
+/* Id 'skippameny' link focus Digital units 1024px+ – Position, Left, Top, Webkit-transition, Transition  */
+@media (min-width: 1024px) {
+  #skippameny a:focus {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: top 0.2s ease-in;
+  }
+}
+
+/* Id 'skippameny' link focus Digital units -1023px – Display */
+@media (max-width: 1023px) {
+  #skippameny {
+    display: none;
+  }
+}
+
+/* List in menu  */
+nav ul {
+  float: right;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Menu, tabbing nav – Outline-color */
+nav a:hover, nav a:focus {
+  outline-color: #FFFFFF;
+}
+
+/* Menu – Navigation element/ unordered list/ list item, Line-height, Padding */
+nav ul li {
+  line-height: 1.5rem;
+  padding: 0.8rem 0.5rem 0.5rem;
+}
+
+/* Menu, tabbing dropdowns – Visibility, Opacity, Display, Padding */
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  padding: 1rem;
+}
+
+/* ------ End Navigation ------ */
+
+/* Cover photo 'header', 'news', 'header'turistmal', 'bottom-turistmal', 'header-gastplats', 'middle-gastplats', 'header-historia', 'header-contact' and 'header-english' – Images cover full width */
+.cover-photo-header-desktop>img, .cover-photo-header-mobil>img, .cover-photo-news-desktop>img, .cover-photo-news-mobil>img, .cover-photo-header-turistmal-desktop>img, .cover-photo-header-turistmal-mobil>img, .cover-photo-bottom-turistmal-desktop>img, .cover-photo-bottom-turistmal-mobil>img, .cover-photo-header-gastplats-desktop>img, .cover-photo-header-gastplats-mobil>img, .cover-photo-middle-gastplats-desktop>img, .cover-photo-middle-gastplats-mobil>img, .cover-photo-header-historia-desktop>img, .cover-photo-header-historia-mobil>img, .cover-photo-header-medlemsinfo-desktop>img, .cover-photo-header-medlemsinfo-mobil>img, .cover-photo-header-contact-desktop>img, .cover-photo-header-contact-mobil>img, .cover-photo-header-english-desktop>img, .cover-photo-header-english-mobil>img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------ Start /start – Info ------ */
+
+/* Class 'container' – digital units 981px-1360px – Display grid, Grid name, Columns */
+@media (min-width: 981px) and (max-width: 1360px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "main main"
+    "info info"
+    "news news"
+    "footer footer";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Class 'container' – digital units 1361px+ – Display grid, Grid name, Columns */
+@media (min-width: 1361px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "main main"
+    "info info"
+    "news news"
+    "footer footer";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Grid main digital units 981px + */
+@media (min-width: 981px) {
+  main {
+    display: grid;
+    grid-template-areas:
+    "cover-photo-header cover-photo-header"
+    "info info"
+    "weather weather"
+    "cover-photo-news cover-photo-news"
+    "heading-news heading-news"
+    "news news";
+    grid-template-columns: 50% 50%;
+    margin: auto;
+  }
+}
+
+/* Padding left och right media max-witdh 980px */
+@media (max-width: 980px) {
+  main {
+    padding: 0rem;
+  }
+}
+
+/* Main content – Background-color, Add a top margin to avoid content overlay due to fixed navbar */
+main {
+  background-color: #FFFFFF;
+  grid-area: main;
+  margin-top: 70px;
+}
+
+/* Cover Photo 'header' – Name of grid area */
+.cover-photo-header {
+  grid-area: cover-photo-header;
+  margin-bottom: -6px;
+}
+
+/* Show 'cover-photo-header' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-header-desktop {
+    display: block;
+  }
+  .cover-photo-header-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-header' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-header-desktop {
+    display: none;
+  }
+  .cover-photo-header-mobil {
+    display: block;
+  }
+}
+
+/* Class 'info-text' – Padding */
+.text-info {
+  padding: 1.5rem 4.5rem;
+}
+
+/* Class 'text-info' Digital units -980px – Padding */
+@media (min-width: 981px) and (max-width: 1280px) {
+  .text-info {
+    padding: 2rem 6rem 3rem;
+  }
+}
+
+/* Class 'text-info' Digital units -980px – Padding */
+@media (max-width: 980px) {
+  .text-info {
+    padding: 1rem 1rem 2rem;
+  }
+}
+
+/* Class image 'image-info' – Width */
+img.image-info {
+  width: 100%;
+}
+
+/* Grid info digital units 981px - 1360px */
+@media (max-width: 1280px) {
+  .image-info {
+    display: none;
+  }
+}
+
+/* Id 'info' – Name of grid area, Background-color */
+#info {
+  grid-area: info;
+  background-color: #D8DDDD;
+  padding-bottom: 1.5rem;
+}
+
+/* Grid info digital units 1361px + */
+@media (min-width: 1281px) {
+  #info {
+    display: grid;
+    grid-template-areas:
+    "info info";
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+  }
+}
+
+/* Grid info digital units 981px - 1360px */
+@media (max-width: 1280px) {
+  #info {
+    display: grid;
+    grid-template-areas:
+    "info";
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+/* ------ End /start – Info ------ */
+
+/* ------ Start /start + /gastplats – Weather ------ */
+
+/* Id 'weather' – Name of grid area, Background-color */
+#weather {
+  grid-area: weather;
+  background-color: #ffffff;
+}
+
+/* Id 'weather' – digital units 1361px+ – Grid name, columns */
+@media (min-width: 1361px) {
+  #weather {
+    display: grid;
+    grid-template-areas:
+    "weather";
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+/* Id 'weather' – digital untis 981px-1360px – Grid name, columns */
+@media (min-width: 981px) and (max-width: 1360px) {
+  #weather {
+    display: grid;
+    grid-template-areas:
+    "weather";
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+/* Class 'weather-text' – Padding */
+.weather-text {
+  padding: 0rem 18rem 3rem;
+}
+
+/* Class 'weather-text' – Padding */
+@media (min-width: 981px) and (max-width: 1280px) {
+  .weather-text {
+    padding: 2rem 6rem 4rem;
+  }
+}
+
+/* Class 'weather-text' – Padding */
+@media (max-width: 980px) {
+  .weather-text {
+    padding: 1rem 1rem 2rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .centered-btn {
+    text-align: left;
+  }
+}
+
+/* ------ End /start + /gastplats – Weather ------ */
+
+/* ------ Start /start – News ------ */
+
+/* Cover Photo 'news' – Name of grid area, Margin */
+.cover-photo-news {
+  grid-area: cover-photo-news;
+}
+
+/* Show 'cover-photo-news' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-news-desktop {
+    display: block;
+  }
+  .cover-photo-news-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-news' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-news-desktop {
+    display: none;
+  }
+  .cover-photo-news-mobil {
+    display: block;
+  }
+}
+
+/* Id 'heading-news' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#heading-news {
+  grid-area: heading-news;
+  display: grid;
+  grid-template-areas:
+  "heading-news";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Id 'news' – Grid name, Background-color */
+#news {
+  grid-area: news;
+  background-color: #FFFFFF;
+}
+
+/* Class 'news-content' – Padding, Margin */
+.content-news {
+  padding: 4rem 5rem 3rem;
+  margin: auto;
+}
+
+/* Class 'news-content' – Padding, Margin */
+@media (max-width: 980px) {
+  .content-news {
+    padding: 1rem 1rem 2rem;
+  }
+}
+
+/* Class image 'news-image' – Width, Margin */
+img.image-news {
+  width: 400px;
+  margin: auto;
+  padding-left: 6rem;
+}
+
+/* Class image 'news-image' – Width, Margin */
+@media (max-width: 980px) {
+  img.image-news {
+    padding-left: 1rem;
+  }
+}
+
+/* Grid info digital units 1361px + */
+@media (min-width: 1281px) {
+  #news {
+    display: grid;
+    grid-template-areas:
+    "news news"
+    "news news";
+    grid-template-columns: 1fr 2fr;
+    margin: auto;
+  }
+}
+
+/* Grid info digital units 981px - 1360px */
+@media (min-width: 981px) and (max-width: 1280px) {
+  #news {
+    display: grid;
+    grid-template-areas:
+    "news news"
+    "news news";
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+  }
+}
+
+/* Class 'Date' – Font size */
+.date {
+  font-size: 80%;
+}
+
+/* ------ End /start – News ------ */
+
+/* ------ Start Turist /turistmal ------ */
+
+/* Class 'container-turistmal' – Display grid, Grid name, Columns */
+.container-turistmal {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "nav nav"
+  "main-turistmal main-turistmal"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Class 'container-turistmal' – digital units -980px – Display grid, Grid name, Columns */
+@media (max-width: 980px) {
+  .container-turistmal {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main-turistmal"
+    "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main content-turistmal – Background-color, Grid name, Add a top margin to avoid content overlay due to fixed navbar */
+.main-turistmal {
+  background-color: #FFFFFF;
+  grid-area: main-turistmal;
+  display: grid;
+  grid-template-areas:
+  "cover-photo-header-turistmal cover-photo-header-turistmal"
+  "heading-turistmal heading-turistmal"
+  "info-ekstakusten-skeppssattning info-ekstakusten-skeppssattning"
+  "info-badplatser-restauranger info-badplatser-restauranger"
+  "info-oarna info-oarna"
+  "cover-photo-bottom-turistmal cover-photo-bottom-turistmal";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-top: 70px;
+}
+
+/* Grid main-turistmal digital units -1280px */
+@media (max-width: 1280px) {
+  .main-turistmal {
+    display: grid;
+    grid-template-areas:
+    "cover-photo-header-turistmal"
+    "heading-turistmal"
+    "info-ekstakusten-skeppssattning"
+    "info-badplatser-restauranger"
+    "info-oarna"
+    "cover-photo-bottom-turistmal";
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin-top: 70px;
+  }
+}
+
+/* Cover Photo 'header-turistmal' – Name of grid area */
+.cover-photo-header-turistmal {
+  grid-area: cover-photo-header-turistmal;
+}
+
+/* Show 'cover-photo-header-turistmal' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-header-turistmal-desktop {
+    display: block;
+  }
+  .cover-photo-header-turistmal-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-header-turistmal' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-header-turistmal-desktop {
+    display: none;
+  }
+  .cover-photo-header-conturistmaltact-mobil {
+    display: block;
+  }
+}
+
+/* Id 'heading-turistmal' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#heading-turistmal {
+  grid-area: heading-turistmal;
+  display: grid;
+  grid-template-areas:
+  "heading-turistmal";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Id 'info-ekstakusten-skeppssattning' – Grid name, Background-color, Display Grid, Grid area, Grid columns, Margin */
+#info-ekstakusten-skeppssattning {
+  grid-area: info-ekstakusten-skeppssattning;
+  background-color: #D8DDDD;
+  display: grid;
+  grid-template-areas:
+  "info-text-ekstakusten-skeppssattning info-image-ekstakusten-skeppssattning";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+/* Grid 'info-ekstakusten-skeppssattning' Digital units -1280px */
+@media (max-width: 1280px) {
+  #info-ekstakusten-skeppssattning {
+    display: grid;
+    grid-template-areas:
+    "info-text-ekstakusten-skeppssattning"
+    "info-image-ekstakusten-skeppssattning";
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+/* Class 'info-text-ekstakusten-skeppssattning' – Grid-area, Padding */
+.info-text-ekstakusten-skeppssattning {
+  grid-area: info-text-ekstakusten-skeppssattning;
+  padding: 2.5rem 4.5rem;
+}
+
+/* Class 'info-text-ekstakusten-skeppssattning' digital units 768px-1280px – Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-text-ekstakusten-skeppssattning {
+    padding: 2rem 3rem;
+  }
+} 
+
+/* Class 'info-text-ekstakusten-skeppssattning' digital units -767px – Padding */
+@media (max-width: 767px) {
+  .info-text-ekstakusten-skeppssattning {
+    padding: 2rem 1rem 1rem;
+  }
+} 
+
+/* Class image 'image-info-ekstakusten-skeppssattning' and 'image-info-badplatser-restauranger' – Width */
+img.image-info-ekstakusten-skeppssattning, img.image-info-badplatser-restauranger {
+  width: 100%;
+}
+
+/* Class 'info-image-ekstakusten-skeppssattning' – Grid-area */
+.info-image-ekstakusten-skeppssattning {
+  grid-area: info-image-ekstakusten-skeppssattning;
+}
+
+/* Class 'info-image-ekstakusten-skeppssattning' digital units 768px-1280px – Margin */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-image-ekstakusten-skeppssattning {
+    margin: 0rem 3rem 2rem;
+  }
+}
+
+/* Class 'info-image-ekstakusten-skeppssattning' digital units -767px – Margin */
+@media (max-width: 767px) {
+  .info-image-ekstakusten-skeppssattning {
+    margin: 0rem 1rem 2rem;
+  }
+}
+
+/* Show 'info-image-ekstakusten-skeppssattning-desktop' digital units 981px- */
+@media only screen and (min-width: 981px) {
+  .info-image-ekstakusten-skeppssattning-desktop {
+    display: block;
+    margin-bottom: -0.4rem;
+  }
+  .info-image-ekstakusten-skeppssattning-mobil {
+    display: none;
+  }
+}
+
+/* Show 'info-image-ekstakusten-skeppssattning-mobil' digital units -980px */
+@media only screen and (max-width: 980px) {
+  .info-image-ekstakusten-skeppssattning-desktop {
+    display: none;
+  }
+  .info-image-ekstakusten-skeppssattning-mobil {
+    display: block;
+  }
+}
+
+/* Id 'info-badplatser-restauranger' – Grid name, Background-color, Display Grid, Grid area, Grid columns, Margin */
+#info-badplatser-restauranger {
+  grid-area: info-badplatser-restauranger;
+  background-color: #D8DDDD;
+  display: grid;
+  grid-template-areas:
+  "info-image-badplatser-restauranger info-text-badplatser-restauranger";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+/* Grid 'info-badplatser-restauranger' Digital units -1280px */
+@media (max-width: 1280px) {
+  #info-badplatser-restauranger {
+    display: grid;
+    grid-template-areas:
+    "info-text-badplatser-restauranger"
+    "info-image-badplatser-restauranger";
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+/* Class 'info-image-badplatser-restauranger' – Grid-area */
+.info-image-badplatser-restauranger {
+  grid-area: info-image-badplatser-restauranger;
+}
+
+/* Class 'info-image-badplatser-restauranger' digital units 768px-1280px – Margin */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-image-badplatser-restauranger {
+    margin: 0rem 3rem 2rem;
+  }
+}
+
+/* Class 'info-image-badplatser-restauranger' digital units -767px – Margin */
+@media (max-width: 767px) {
+  .info-image-badplatser-restauranger {
+    margin: 0rem 1rem 2rem;
+  }
+}
+
+/* Show 'info-image-badplatser-restauranger-desktop' digital units 981px- */
+@media only screen and (min-width: 981px) {
+  .info-image-badplatser-restauranger-desktop {
+    display: block;
+    margin-bottom: -0.3rem;
+  }
+  .info-image-badplatser-restauranger-mobil {
+    display: none;
+  }
+}
+
+/* Show 'info-image-badplatser-restauranger-mobil' digital units -980px */
+@media only screen and (max-width: 980px) {
+  .info-image-badplatser-restauranger-desktop {
+    display: none;
+  }
+  .info-image-badplatser-restauranger-mobil {
+    display: block;
+  }
+}
+
+/* Class 'info-text-badplatser-restauranger' – Grid-area, Padding */
+.info-text-badplatser-restauranger {
+  grid-area: info-text-badplatser-restauranger;
+  padding: 2.5rem 4.5rem;
+}
+
+/* Class 'info-text-badplatser-restauranger' digital units 768px-1280px – Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-text-badplatser-restauranger {
+    padding: 2rem 3rem;
+  }
+} 
+
+/* Class 'info-text-badplatser-restauranger' digital units -767px – Padding */
+@media (max-width: 767px) {
+  .info-text-badplatser-restauranger {
+    padding: 2rem 1rem 1rem;
+  }
+} 
+
+/* Id 'info-oarna' – Grid name */
+#info-oarna {
+  grid-area: info-oarna;
+}
+
+/* Class 'info-text-oarna' – Padding */
+.info-text-oarna {
+  padding: 3rem 18rem;
+}
+
+/* Class 'info-text-oarna' Digital units -768px1280px– Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-text-oarna {
+    padding: 2rem 3rem;
+  }
+}
+
+/* Class 'info-text-oarna' Digital units -767px– Padding */
+@media (max-width: 767px) {
+  .info-text-oarna {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Cover Photo 'bottom-turistmal' – Name of grid area, Margin */
+.cover-photo-bottom-turistmal {
+  grid-area: cover-photo-bottom-turistmal;
+  margin-bottom: -6px;
+}
+
+/* Show 'cover-photo-bottom-turistmal' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-bottom-turistmal-desktop {
+    display: block;
+  }
+  .cover-photo-bottom-turistmal-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-bottom-turistmal' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-bottom-turistmal-desktop {
+    display: none;
+  }
+  .cover-photo-bottom-conturistmaltact-mobil {
+    display: block;
+  }
+}
+
+/* ------ End Turist /turistmal ------ */
+
+/* ------ Start Turist /gastplats ------ */
+
+/* Class 'container-gastplats' – Display grid, Grid name, Columns */
+.container-gastplats {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "nav nav"
+  "main-gastplats main-gastplats"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Class 'container-gastplats' – digital units -980px – Display grid, Grid name, Columns */
+@media (max-width: 980px) {
+  .container-gastplats {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main-gastplats"
+    "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main content-gastplats – Background-color, Grid name, Add a top margin to avoid content overlay due to fixed navbar */
+.main-gastplats {
+  background-color: #FFFFFF;
+  grid-area: main-gastplats;
+  display: grid;
+  grid-template-areas:
+  "cover-photo-header-gastplats cover-photo-header-gastplats"
+  "heading-gastplats heading-gastplats"
+  "info-gastplats info-gastplats"
+  "cover-photo-middle-gastplats cover-photo-middle-gastplats"
+  "weather weather";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-top: 70px;
+}
+
+/* Grid main-gastplats digital units -1280px */
+@media (max-width: 1280px) {
+  .main-gastplats {
+    display: grid;
+    grid-template-areas:
+    "cover-photo-header-gastplats"
+    "heading-gastplats"
+    "info-gastplats"
+    "cover-photo-middle-gastplats"
+    "weather";
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin-top: 70px;
+  }
+}
+
+/* Cover Photo 'header-gastplats' – Name of grid area */
+.cover-photo-header-gastplats {
+  grid-area: cover-photo-header-gastplats;
+}
+
+/* Show 'cover-photo-header-gastplats' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-header-gastplats-desktop {
+    display: block;
+  }
+  .cover-photo-header-gastplats-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-header-gastplats' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-header-gastplats-desktop {
+    display: none;
+  }
+  .cover-photo-header-gastplats-mobil {
+    display: block;
+  }
+}
+
+/* Id 'heading-gastplats' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#heading-gastplats {
+  grid-area: heading-gastplats;
+  display: grid;
+  grid-template-areas:
+  "heading-gastplats";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Id 'info-gastplats' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#info-gastplats {
+  grid-area: info-gastplats;
+  Display: grid;
+  grid-template-areas:
+  "info-gastplats";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Class 'info-text-gastplats' – Padding */
+.info-text-gastplats {
+  padding: 0rem 18rem 3rem;
+}
+
+/* Class 'info-text-gastplats' Digital units -768px1280px– Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-text-gastplats {
+    padding: 0rem 3rem 2rem;
+  }
+}
+
+/* Class 'info-text-gastplats' Digital units -767px– Padding */
+@media (max-width: 767px) {
+  .info-text-gastplats {
+    padding: 0rem 1rem 2rem;
+  }
+}
+
+/* Class 'price-information' table – Border */
+.price-information {
+  border: 1px solid #333333;
+  margin-bottom: 0.6rem;
+}
+
+/* Class 'price-information' table th, td– Text-align */
+.price-information th, td {
+  text-align: left;
+}
+
+/* Class 'price-information' table th – Height, Veritcal-align, Padding */
+.price-information th {
+  height: 2.5rem;
+  vertical-align: middle;
+  padding: 0.6rem;
+}
+
+/* Class 'price-information' table td – Padding */
+.price-information td {
+  padding: 0.6rem;
+}
+
+/* Cover Photo 'middle-gastplats' – Name of grid area */
+.cover-photo-middle-gastplats {
+  grid-area: cover-photo-middle-gastplats;
+}
+
+/* Show 'cover-photo-middle-gastplats' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-middle-gastplats-desktop {
+    display: block;
+  }
+  .cover-photo-middle-gastplats-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-middle-gastplats' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-middle-gastplats-desktop {
+    display: none;
+  }
+  .cover-photo-middle-gastplats-mobil {
+    display: block;
+  }
+}
+
+/* ------ End Turist /gastplats ------ */
+
+/* ------ Start Föreningen /historia ------ */
+
+/* Class 'container-historia' – Display grid, Grid name, Columns */
+.container-historia {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "nav nav"
+  "main-historia main-historia"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Class 'container-historia' – digital units -980px – Display grid, Grid name, Columns */
+@media (max-width: 980px) {
+  .container-historia {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main-historia"
+    "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main content-historia – Background-color, Grid name, Add a top margin to avoid content overlay due to fixed navbar */
+.main-historia {
+  background-color: #FFFFFF;
+  grid-area: main-historia;
+  display: grid;
+  grid-template-areas:
+  "cover-photo-header-historia cover-photo-header-historia"
+  "heading-historia heading-historia"
+  "info-historia info-historia"
+  "photos-historia photos-historia";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-top: 70px;
+}
+
+/* Grid main-historia digital units -1280px */
+@media (max-width: 1280px) {
+  .main-historia {
+    display: grid;
+    grid-template-areas:
+    "cover-photo-header-historia"
+    "heading-historia"
+    "info-historia"
+    "photos-historia";
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin-top: 70px;
+  }
+}
+
+/* Cover Photo 'header-historia' – Name of grid area */
+.cover-photo-header-historia {
+  grid-area: cover-photo-header-historia;
+}
+
+/* Show 'cover-photo-header-historia' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-header-historia-desktop {
+    display: block;
+  }
+  .cover-photo-header-historia-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-header-historia' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-header-historia-desktop {
+    display: none;
+  }
+  .cover-photo-header-historia-mobil {
+    display: block;
+  }
+}
+
+/* Id 'historia-heading' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#heading-historia {
+  grid-area: heading-historia;
+  display: grid;
+  grid-template-areas:
+  "heading-historia";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Id 'info-historia' – Grid name */
+#info-historia {
+  grid-area: info-historia;
+  display: grid;
+  grid-template-areas:
+  "info-historia";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Class 'info-text-historia' – Padding */
+.info-text-historia {
+  padding: 0rem 18rem 2.5rem;
+}
+
+/* Class 'info-text-historia' Digital units -768px1280px– Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-text-historia {
+    padding: 0rem 3rem 2rem;
+  }
+}
+
+/* Class 'info-text-historia' Digital units -767px– Padding */
+@media (max-width: 767px) {
+  .info-text-historia {
+    padding: 0rem 1rem 2rem;
+  }
+}
+
+/* Class 'explanation-names-historia' th – Height, Vertical-align, Font-weight */
+.explanation-names-historia th {
+  height: 1.4rem;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+/* Class 'explanation-names-historia' td – Border-bottom */
+.explanation-names-historia td {
+  border-bottom: 1px solid #333333;
+}
+
+/* Class 'explanation-names-historia' table – Padding, Text-align */
+.explanation-names-historia table, th, td {
+  text-align: left;
+  padding: 0.6rem 1.5rem 0.6rem 0rem;
+}
+
+/* Id 'photos-historia' – Name of grid area, Margin, Padding */
+#photos-historia {
+  grid-area: photos-historia;
+  margin: 1rem 0rem 1.5rem;
+  padding: 0rem 18rem 2.5rem;
+}
+
+/* Id 'photos-historia' Digital units -768px1280px – Margin, Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  #photos-historia {
+    padding: 0rem 3rem 2rem;
+  }
+}
+
+/* Id 'photos-historia' Digital units -767px – Margin, Padding */
+@media (max-width: 767px) {
+  #photos-historia {
+    padding: 0rem 1rem 2rem;
+  }
+}
+
+/* Class 'image-gallery-historia' – Padding */
+.image-gallery-historia {
+  padding: 0.6rem 0rem 0rem;
+}
+
+/* ------ End Föreningen /historia ------ */
+
+/* ------ Start Föreningen /medlemsinfo ------ */
+
+/* Class 'container-medlemsinfo' – Display grid, Grid name, Columns */
+.container-medlemsinfo {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "nav nav"
+  "main-medlemsinfo main-medlemsinfo"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Class 'container-medlemsinfo' – digital units -980px – Display grid, Grid name, Columns */
+@media (max-width: 980px) {
+  .container-medlemsinfo {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main-medlemsinfo"
+    "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main content-medlemsinfo – Background-color, Grid name, Add a top margin to avoid content overlay due to fixed navbar */
+.main-medlemsinfo {
+  background-color: #FFFFFF;
+  grid-area: main-medlemsinfo;
+  display: grid;
+  grid-template-areas:
+  "cover-photo-header-medlemsinfo cover-photo-header-medlemsinfo"
+  "heading-medlemsinfo heading-medlemsinfo"
+  "info-medlemsinfo info-medlemsinfo"
+  "photos-medlemsinfo photos-medlemsinfo";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-top: 70px;
+}
+
+/* Grid main-medlemsinfo digital units -1280px */
+@media (max-width: 1280px) {
+  .main-medlemsinfo {
+    display: grid;
+    grid-template-areas:
+    "cover-photo-header-medlemsinfo"
+    "heading-medlemsinfo"
+    "info-medlemsinfo"
+    "photos-medlemsinfo";
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin-top: 70px;
+  }
+}
+
+/* Cover Photo 'header-medlemsinfo' – Name of grid area */
+.cover-photo-header-medlemsinfo {
+  grid-area: cover-photo-header-medlemsinfo;
+}
+
+/* Show 'cover-photo-header-medlemsinfo' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-header-medlemsinfo-desktop {
+    display: block;
+  }
+  .cover-photo-header-medlemsinfo-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-header-medlemsinfo' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-header-medlemsinfo-desktop {
+    display: none;
+  }
+  .cover-photo-header-medlemsinfo-mobil {
+    display: block;
+  }
+}
+
+/* Id 'heading-medlemsinfo' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#heading-medlemsinfo {
+  grid-area: heading-medlemsinfo;
+  display: grid;
+  grid-template-areas:
+  "heading-medlemsinfo";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Id 'info-medlemsinfo' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#info-medlemsinfo {
+  grid-area: info-medlemsinfo;
+  display: grid;
+  grid-template-areas:
+  "info-medlemsinfo";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Class 'info-text-medlemsinfo' – Padding */
+.info-text-medlemsinfo {
+  padding: 0rem 18rem 3rem;
+}
+
+/* Class 'info-text-medlemsinfo' Digital units 768px-1280px – Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-text-medlemsinfo {
+    padding: 0rem 3rem 2rem;
+  }
+}
+
+/* Class 'info-text-medlemsinfo' Digital units -767px – Padding */
+@media (max-width: 767px) {
+  .info-text-medlemsinfo {
+    padding: 0rem 1rem 2rem;
+  }
+}
+
+/* Class 'btn-meetings' – Margin */
+.btn-meetings {
+  margin-bottom: 1.5rem;
+}
+
+/* Class 'btn-meetings' Digital units -767px – Padding */
+@media (max-width: 767px) {
+  .btn-meetings {
+    font-size: 84%;
+  }
+}
+
+/* Class 'board-contact-information-medlemsinfo' th – Height, Vertical-align, Font-weight */
+.board-contact-information-medlemsinfo th {
+  height: 1.4rem;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+/* Class 'board-contact-information-medlemsinfo' td – Border-bottom */
+.board-contact-information-medlemsinfo td {
+  border-bottom: 1px solid #333333;
+}
+
+/* Class 'board-contact-information-medlemsinfo' table – Padding, Text-align */
+.board-contact-information-medlemsinfo table, th, td {
+  text-align: left;
+  padding: 0.6rem 1.5rem 0.6rem 0rem;
+}
+
+/* Class 'board-contact-information-medlemsinfo' -767px - Font-size */
+@media (max-width: 767px) {
+  .board-contact-information-medlemsinfo {
+    font-size: 82%;
+  }
+}
+
+/* Id 'photos-medlemsinfo' – Grid name, Columns, Margin, Padding */
+#photos-medlemsinfo {
+  grid-area: photos-medlemsinfo;
+  display: grid;
+  grid-template-areas:
+  "photo-member-info-left photo-member-info-right";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  padding-bottom: 3rem;
+}
+
+/* Grid 'photos-medlemsinfo' digital units -1480px */
+@media (min-width: 1281px) and (max-width: 1480px) {
+  #photos-medlemsinfo {
+    display: grid;
+    grid-template-areas:
+    "photo-member-info-left"
+    "photo-member-info-right";
+    grid-template-columns: 1fr;
+    margin: 0rem 17rem;
+  }
+}
+
+/* Grid 'photos-medlemsinfo' digital units -980px */
+@media (min-width: 768px) and (max-width: 1280px) {
+  #photos-medlemsinfo {
+    display: grid;
+    grid-template-areas:
+    "photo-member-info-left"
+    "photo-member-info-right";
+    grid-template-columns: 1fr;
+    margin: 0rem 2rem;
+  }
+}
+
+/* Grid 'photos-medlemsinfo' digital units -980px */
+@media (max-width: 767px) {
+  #photos-medlemsinfo {
+    display: grid;
+    grid-template-areas:
+    "photo-member-info-left"
+    "photo-member-info-right";
+    grid-template-columns: 1fr;
+    margin: 0rem 0rem;
+  }
+}
+
+/* Class 'photo-member-info-left' and 'photo-member-info-right' – Padding */
+.photo-member-info-left, .photo-member-info-right {
+  padding: 0.4rem 1rem;
+}
+
+/* Class 'photo-member-info-left' – Name of grid area */
+.photo-member-info-left {
+  grid-area: photo-member-info-left;
+}
+
+/* Show 'photo-member-info-left' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .photo-member-info-left-desktop {
+    display: block;
+  }
+  .photo-member-info-left-mobil {
+    display: none;
+  }
+}
+
+/* Show 'photo-member-info-left' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .photo-member-info-left-desktop {
+    display: none;
+  }
+  .photo-member-info-left-mobil {
+    display: block;
+  }
+}
+
+/* Class 'photo-member-info-right' – Name of grid area */
+.photo-member-info-right {
+  grid-area: photo-member-info-right;
+}
+
+/* Show 'photo-member-info-right' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .photo-member-info-right-desktop {
+    display: block;
+  }
+  .photo-member-info-right-mobil {
+    display: none;
+  }
+}
+
+/* Show 'photo-member-info-right' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .photo-member-info-right-desktop {
+    display: none;
+  }
+  .photo-member-info-right-mobil {
+    display: block;
+  }
+}
+
+/* ------ End Föreningen /medlemsinfo ------ */
+
+/* ------ Start /contact ------ */
+
+/* Class 'container-contact' – Display grid, Grid name, Columns */
+.container-contact {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "nav nav"
+  "main-contact main-contact"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Class 'container-contact' – digital units -980px – Display grid, Grid name, Columns */
+@media (max-width: 980px) {
+  .container-contact {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main-contact"
+    "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main content-contact – Background-color, Grid name, Add a top margin to avoid content overlay due to fixed navbar */
+.main-contact {
+  background-color: #FFFFFF;
+  grid-area: main-contact;
+  display: grid;
+  grid-template-areas:
+  "cover-photo-header-contact cover-photo-header-contact"
+  "heading-contact heading-contact"
+  "info-contact info-contact";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-top: 70px;
+}
+
+/* Grid main-contact digital units -1280px */
+@media (max-width: 1280px) {
+  .main-contact {
+    display: grid;
+    grid-template-areas:
+    "cover-photo-header-contact"
+    "heading-contact"
+    "info-contact";
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin-top: 70px;
+  }
+}
+
+/* Cover Photo 'header-contact' – Name of grid area */
+.cover-photo-header-contact {
+  grid-area: cover-photo-header-contact;
+}
+
+/* Show 'cover-photo-header-contact' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-header-contact-desktop {
+    display: block;
+  }
+  .cover-photo-header-contact-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-header-contact' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-header-contact-desktop {
+    display: none;
+  }
+  .cover-photo-header-contact-mobil {
+    display: block;
+  }
+}
+
+/* Id 'contact-heading' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#heading-contact {
+  grid-area: heading-contact;
+  display: grid;
+  grid-template-areas:
+  "heading-contact";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Id 'info-contact' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#info-contact {
+  grid-area: info-contact;
+  display: grid;
+  grid-template-areas:
+  "info-form-contact info-text-contact";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+/* Id 'info-contact' – Grid name, Display Grid, Grid area, Grid columns, Margin Digital units -1280px */
+@media (max-width: 1280px) {
+  #info-contact {
+    display: grid;
+    grid-template-areas:
+    "info-text-contact"
+    "info-form-contact";
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+/* Class 'info-form-contact' – Grid name, Padding */
+.info-form-contact {
+  grid-area: info-form-contact;
+  padding: 0rem 2.5rem 2rem 5rem;
+}
+
+/* Class 'info-form-contact' Digital units 768px-1280px – Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-form-contact {
+    padding: 0rem 3rem 2rem 3rem;
+  }
+}
+
+/* Class 'info-form-contact' Digital units -767px – Padding */
+@media (max-width: 767px) {
+  .info-form-contact {
+    padding: 0rem 1rem 2rem 1rem;
+  }
+}
+
+/* Fieldset Legend contact form – Border, Border-radius, Margin, Padding */
+fieldset {
+  border: 2px solid #2F4859;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+/* Legend contact form – Font-size, Font-weight, Color */
+legend {
+  font-size: 110%;
+  font-weight: 600;
+  color: #2E2014;
+}
+
+/* Class 'contact-info' – Grid name, Background-color, Padding */
+.info-text-contact {
+  grid-area: info-text-contact;
+  padding: 0rem 5rem 4rem 2.5rem;
+}
+
+/* Class 'info-text-contact' Digital units 768px-1280px – Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .info-text-contact {
+    padding: 0rem 3rem 2rem 3rem;
+  }
+}
+
+/* Class 'info-text-contact' Digital units -767px – Padding */
+@media (max-width: 767px) {
+  .info-text-contact {
+    padding: 0rem 1rem 2rem 1rem;
+  }
+}
+
+/*  */
+.info-contact-heading {
+  margin-bottom: 0.75rem;
+}
+
+/* Class 'image-info-contact' – Margin */
+.image-info-contact {
+  margin: auto;
+}
+
+/* Class 'image-info-contact' digital units -1280px – Margin */
+@media (max-width: 1280px) {
+  .image-info-contact {
+    margin: 0rem;
+  }
+}
+
+/* Show 'image-info-contact-desktop' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .image-info-contact-desktop {
+    display: block;
+  }
+  .image-info-contact-mobil {
+    display: none;
+  }
+}
+
+/* Show 'image-info-contact-mobil' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .image-info-contact-desktop {
+    display: none;
+  }
+  .image-info-contact-mobil {
+    display: block;
+  }
+}
+
+/* ------ End /contact ------ */
+
+/* ------ Start /english ------ */
+
+/* Class 'container-english' – Display grid, Grid name, Columns */
+.container-english {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "nav nav"
+  "main-english main-english"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Class 'container-english' – digital units -980px+ – Display grid, Grid name, Columns */
+@media (max-width: 980px) {
+  .container-english {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main-english"
+    "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main content-english – Background-color, Grid name, Add a top margin to avoid content overlay due to fixed navbar */
+.main-english {
+  background-color: #FFFFFF;
+  grid-area: main-english;
+  display: grid;
+  grid-template-areas:
+  "cover-photo-header-english cover-photo-header-english"
+  "heading-english heading-english"
+  "info-english info-english";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-top: 70px;
+}
+
+/* Grid main-english digital units 981px+ */
+@media (min-width: 981px) and (max-width: 1280px) {
+  .main-english {
+    display: grid;
+    grid-template-areas:
+    "cover-photo-header-english"
+    "heading-english"
+    "info-english";
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin-top: 70px;
+  }
+}
+
+/* Padding left och right media max-witdh 980px */
+@media (max-width: 980px) {
+  .main-english {
+    padding: 0rem;
+    margin-top: 70px;
+  }
+}
+
+/* Cover Photo 'header-english' – Name of grid area */
+.cover-photo-header-english {
+  grid-area: cover-photo-header-english;
+}
+
+/* Show 'cover-photo-header-english' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .cover-photo-header-english-desktop {
+    display: block;
+  }
+  .cover-photo-header-english-mobil {
+    display: none;
+  }
+}
+
+/* Show 'cover-photo-header-english' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .cover-photo-header-english-desktop {
+    display: none;
+  }
+  .cover-photo-header-english-mobil {
+    display: block;
+  }
+}
+
+/* Id 'heading-english' – Grid name, Display Grid, Grid area, Grid columns, Margin */
+#heading-english {
+  grid-area: heading-english;
+  display: grid;
+  grid-template-areas:
+  "heading-english";
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+/* Id 'info-english' – Grid name, Padding */
+#info-english {
+  grid-area: info-english;
+  display: grid;
+  grid-template-areas:
+  "info-english info-english";
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  padding-bottom: 4rem;
+}
+
+/* Id 'info-english' digital units 768px - 1280px */
+@media (min-width: 768px) and (max-width: 1280px) {
+  #info-english {
+    display: grid;
+    grid-template-areas:
+    "info-english";
+    grid-template-columns: 1fr;
+    margin: auto;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Id 'info-english' digital units -767px – Padding */
+@media (max-width: 767px) {
+  #info-english {
+    display: grid;
+    grid-template-areas:
+    "info-english";
+    grid-template-columns: 1fr;
+    margin: auto;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Class 'info-text' – Padding */
+.text-info-english {
+  padding: 0rem 5rem 2.5rem;
+}
+
+/* /* Class 'info-text' digital units 768px - 1280px – Padding */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .text-info-english {
+    padding: 1rem 3rem;
+  }
+}
+
+/* /* Class 'image-info-text' digital units -767px – Padding */
+@media (max-width: 767px) {
+  .text-info-english {
+    padding: 0rem 1rem;
+  }
+}
+
+/* Class 'image-info-english' – Margin */
+.image-info-english {
+  margin: auto;
+}
+
+/* Class 'image-info-english' digital units 768px - 1280px – Margin */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .image-info-english {
+    margin: 3rem;
+  }
+}
+
+/* Class 'info-text' digital units -767px – Margin */
+@media (max-width: 767px) {
+  .image-info-english {
+    margin: 1rem;
+  }
+}
+
+/* Show 'image-info-english-desktop' digital units 768px- */
+@media only screen and (min-width: 768px) {
+  .image-info-english-desktop {
+    display: block;
+  }
+  .image-info-english-mobil {
+    display: none;
+  }
+}
+
+/* Show 'image-info-english-mobil' digital units -767px */
+@media only screen and (max-width: 767px) {
+  .image-info-english-desktop {
+    display: none;
+  }
+  .image-info-english-mobil {
+    display: block;
+  }
+}
+
+/* ------ End /english ------ */
+
+/* ------ Start Footer ------ */
+
+/* Footer – Font-size, Text-align, Padding, Background-color, Color, Grid name */
+footer {
+  font-size: 80%;
+  text-align: center;
+  padding: 2.6rem 0rem 1.4rem;
+  background-color: #192740;
+  color: #BAADA4;
+  grid-area: footer;
+}
+
+/* Footer links – Color */
+footer a {
+  color: #FFFFFF;
+}
+
+/* Footer links hover – Color */
+footer a:hover {
+  color: #D8DDDD;
+}
+
+/* Class 'djupvik-symbol' – digital units -980px – Width, Height */
+@media (max-width: 980px) {
+  .djupvik-symbol {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Class 'hitta-hit' – Margin */
+.hitta-hit {
+  margin: 1rem 0rem;
+}
+
+/* Class 'hitta-hit' link – Font-size, Font-weight */
+.hitta-hit a {
+  font-size: 120%;
+  font-weight: 600;
+}
+
+/* ------ End Footer ------ */
