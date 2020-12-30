@@ -1,2 +1,2 @@
-# djupvik
-Simple webpage with grids for Djupvik at Gotland, Sweden as a project in the course Web Application Development at Uppsala University. Images used in the project provided by the university.
+# Port of Djupvik
+A simple webpage with grids for The Port of Djupvik at Gotland, Sweden as a project in a Web Application Development course at Uppsala University. The images used were provided by the university.
